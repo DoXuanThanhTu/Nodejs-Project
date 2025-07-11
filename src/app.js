@@ -10,6 +10,8 @@ const app = express();
 app.use(morgan("dev"));
 app.use(helmet());
 app.use(compression()); //compress payload
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 //init db
 require("./db/init.mongodb.js");
 
